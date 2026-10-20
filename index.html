@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kyobell — Petshop &amp; Kebutuhan Anabul</title>
+  <meta name="description" content="Petshop &amp; Kebutuhan Anabul di Singaraja: same-day delivery, langganan auto-restock, dan konsultasi produk gratis.">
+
+  <!-- Font: Baloo 2 (judul) + Nunito Sans (isi) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="paw-pattern" aria-hidden="true"></div>
+
+  <!-- Bar pengumuman -->
+  <div class="announcement-bar">Order sebelum 16.00 = dianter hari ini juga (area Singaraja).</div>
+
+  <!-- Lapisan di belakang menu hamburger (HP); ketuk untuk menutup menu -->
+  <div class="menu-backdrop" id="menu-backdrop" hidden></div>
+
+  <!-- Navbar: logo, menu (HP = hamburger), ikon keranjang -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#/" class="brand-logo">🐾 Kyobell</a>
+
+      <nav class="navbar-menu" id="site-menu" aria-label="Menu utama">
+        <a class="navbar-link" data-route="/katalog" href="#/katalog">Katalog</a>
+        <a class="navbar-link" data-route="/langganan" href="#/langganan">Langganan Auto-Restock</a>
+        <a class="navbar-link" data-route="/konsultasi" href="#/konsultasi">Konsultasi</a>
+        <a class="navbar-link" data-route="/kontak" href="#/kontak">Kontak</a>
+      </nav>
+
+      <a href="#/wishlist" class="cart-link" aria-label="Keranjang">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 7H6"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </a>
+
+      <!-- Tombol hamburger: hanya tampil di layar HP/tablet kecil (< 800px) -->
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-toggle-bars"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Isi halaman dirender oleh JavaScript (lihat js/app.js) -->
+  <main id="app"></main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#/katalog">Katalog</a>
+        <a href="#/langganan">Langganan</a>
+        <a href="#/konsultasi">Konsultasi</a>
+        <a href="#/kontak">Kontak</a>
+        <a href="#/wishlist">Keranjang</a>
+      </div>
+      <p>© 2026 Kyobell Petshop.<br>Petshop &amp; Kebutuhan Anabul · Singaraja, Bali</p>
+    </div>
+  </footer>
+
+  <!-- Tombol WhatsApp mengambang (tampil di semua halaman) -->
+  <a class="whatsapp-fab" id="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat WhatsApp">💬 Chat WA</a>
+
+  <!-- Urutan skrip penting: konfigurasi → utilitas → data → keranjang → komponen → halaman → aplikasi -->
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
